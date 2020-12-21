@@ -5,7 +5,7 @@
     <div class="row mt-5"></div>
     <form action="{{ route('config_service.store') }}" method="post"  autocomplete="off" class="form-horizontal mt-4">
         @csrf
-        <div class="card-header bg-gradient-primary">
+        <div class="card-header">
             <h3 class="card-title pt-3 font-weight-bold">ADD SERVICE</h3>
         </div>
         <div class="card">

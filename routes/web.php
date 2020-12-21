@@ -29,6 +29,7 @@ Route::group(['prefix' => 'transactions', 'as' => 'transaction.'], function() {
     Route::get('/', [TransactionController::class, 'index'])->name('index');
     Route::post('/store', [TransactionController::class, 'store'])->name('store');
     Route::get('/create', [TransactionController::class, 'create'])->name('create');
+    Route::get('/show/{id}', [TransactionController::class, 'show'])->name('show');
     
 });
 

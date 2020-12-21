@@ -5,8 +5,8 @@
         <div class="row mt-5"></div>
         <div class="row mt-4">
             <div class="col-md-6">
-                <div class="small-box bg-primary">
-                    <div class="inner text-light">
+                <div class="small-box bg-light">
+                    <div class="inner text-primary">
                         <h3>{{count($transactions)}}</h3>
                         <p>Total Transaction</p>
                     </div>
@@ -47,36 +47,35 @@
 
         <div class="card">
           <div class="card-header bg-light">
-            <h3 class="card-title text-primary">TODAY</h3>
+            <h3 class="card-title text-primary">DAILY TRANSACTION PER TYPE</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table class="table table-bordered">
-              <thead class="bg-primary">
+              <thead>
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>Transaction</th>
-                  <th>Amount</th>
-                  <th style="width: 100px">Total</th>
+                  <th style="width: 150px">Total Count</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1.</td>
                   <td>TOTAL TRANSACTION</td>
-                  <td class="font-weight-bold">{{ $today_amount }}</td>
+                  <!-- <td class="font-weight-bold">{{ $today_amount }}</td> -->
                   <td class="font-weight-bold">{{count($today_transaction)}}</td>
                 </tr>
                 <tr>
                   <td>2.</td>
                   <td>SENT</td>
-                  <td class="font-weight-bold">{{ $today_sent_amount }}</td>
+                  <!-- <td class="font-weight-bold">{{ $today_sent_amount }}</td> -->
                   <td class="font-weight-bold">{{count($today_sent)}}</td>
                 </tr>
                 <tr>
                   <td>3.</td>
                   <td>RECEIVED</td>
-                  <td class="font-weight-bold">{{$today_amount - $today_sent_amount}}</td>
+                  <!-- <td class="font-weight-bold">{{$today_amount - $today_sent_amount}}</td> -->
                   <td class="font-weight-bold">{{count($today_transaction) - count($today_sent)}}</td>
                 </tr>
               </tbody>
@@ -86,19 +85,19 @@
 
         <div class="card">
           <div class="card-header bg-light">
-            <h3 class="card-title text-primary">TODAY</h3>
+            <h3 class="card-title text-primary">DAILY TRANSACTION PER SERVICE</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table class="table table-bordered">
-              <thead class="bg-primary">
+              <thead>
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>Transaction</th>
                   <th>Amount</th>
                   <th>Amount Sent</th>
                   <th>Amount Received</th>
-                  <th style="width: 100px">Total</th>
+                  <th style="width: 150px">Total Count</th>
                   <th style="width: 100px">Sent</th>
                   <th style="width: 100px">Received</th>
                 </tr>

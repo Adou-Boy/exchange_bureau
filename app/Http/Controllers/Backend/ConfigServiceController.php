@@ -48,7 +48,7 @@ class ConfigServiceController extends Controller
     public function store(Request $request)
     {
         Service::create($request->all());
-        return redirect()->route('config_service.index')->withSuccess("service successfully created");
+        return redirect()->route('config_service.index')->withStatus("service successfully created");
     }
 
     /**

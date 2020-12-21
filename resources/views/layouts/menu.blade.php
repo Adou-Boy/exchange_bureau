@@ -1,8 +1,8 @@
 <!-- need to remove -->
 <li class="nav-item">
     <a href="{{ route('home') }}" class="nav-link">
-        <i class="nav-icon fas fa-home text-primary"></i>
-        <p>Home</p>
+        <i class="nav-icon fas fa-th text-orange"></i>
+        <p>Dashboard</p>
     </a>
 </li>
 

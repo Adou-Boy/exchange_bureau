@@ -53,6 +53,10 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
+        $currency = $request->input('currency');
+        $amount = $request->input('amount');
+        $exchange_rate = $request->input('exchange_rate');
+
         $transaction = new Transaction;
         $transaction->type = $request->input('type');
         $transaction->service = $request->input('service');
@@ -61,10 +65,15 @@ class TransactionController extends Controller
         $transaction->destination = $request->input('destination');
         $transaction->receiver_name = $request->input('receiver_name');
         $transaction->receiver_telephone = $request->input('receiver_telephone');
-        $transaction->currency = $request->input('currency');
-        $transaction->amount = $request->input('amount');
-        $transaction->exchange_rate = $request->input('exchange_rate');
-        $transaction->total_amount = $request->input('amount') * $request->input('exchange_rate');
+        $transaction->currency = $currency;
+        $transaction->amount = $amount;
+        $transaction->exchange_rate = $exchange_rate;
+        if ($currency == 'CFA') {
+            $transaction->total_amount = ($amount / 2000) * $exchange_rate;
+        } else {
+            $transaction->total_amount = $amount * $exchange_rate;
+        }
+        
         $transaction->save();
 
         return redirect()->route('transaction.index')->withSuccess("transfer successfully made");
@@ -78,7 +87,8 @@ class TransactionController extends Controller
      */
     public function show($id)
     {
-        //
+        $transaction = Transaction::findOrFail($id);
+        return view('pages.transfer.show', compact('transaction')); 
     }
 
     /**

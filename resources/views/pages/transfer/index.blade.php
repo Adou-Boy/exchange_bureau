@@ -4,8 +4,8 @@
     <div class="container-fluid">
         <div class="row mt-5"></div>
         <form class="horizontal-form mt-4">
-            <div class="card-header bg-gradient-primary">
-                <h3 class="card-title pt-3 font-weight-bold">TRANSFER TRANSACTION</h3>
+            <div class="card-header bg-gradient-default">
+                <h3 class="card-title pt-3 font-weight-bold">TRANSACTIONS</h3>
                 @include('pages.includes.new_config', ['newconfiguration' => 'New Transfer', 'pageRoute' => 'transaction.create'])
             </div>
             <div class="card">
@@ -18,8 +18,7 @@
                                         <th>No</th>
                                         <th>Sender Name</th>
                                         <th>Receiver Name</th>
-                                        <th>Amount</th>
-                                        <th>Exchange Rate</th>
+                                        <th>Paid Amount</th>
                                         <th>TYPE</th>
                                         <th>Date</th>
                                         <th>Action</th>
@@ -31,12 +30,11 @@
                                         <td>{{ $transaction->id }}</td>
                                         <td>{{ $transaction->sender_name }}</td>
                                         <td>{{ $transaction->receiver_name }}</td>
-                                        <td>{{ $transaction->currency . "-" . $transaction->amount }}</td>
-                                        <td>{{ $transaction->exchange_rate }}</td>
-                                        <td class="text-success">{{ $transaction->type }}</td>
+                                        <td>{{ $transaction->total_amount }}</td>
+                                        <td class="text-info">{{ $transaction->type }}</td>
                                         <td>{{ $transaction->created_at }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-success btn-sm "><i class="fas fa-eye"></i> view</a>
+                                            <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-primary btn-sm "><i class="fas fa-folder"></i> view</a>
                                         </td>
                                     </tr>
                                     @endforeach
