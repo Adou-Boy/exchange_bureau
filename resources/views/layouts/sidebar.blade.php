@@ -6,11 +6,11 @@
   </a>
 
   <!-- Sidebar -->
-  <div class="sidebar position-fixed">
+  <div class="sidebar">
     
 
     <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column position-fixed" style="width:18%;" data-widget="treeview" role="menu" data-accordion="false">
             @include('layouts.menu')
         </ul>
     </nav>
