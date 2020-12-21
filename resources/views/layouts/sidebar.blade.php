@@ -1,7 +1,7 @@
 
 <aside class="main-sidebar sidebar-light-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
+  <a href="/home" class="brand-link">
     <span class="brand-text font-weight-bold text-primary">{{ config('app.name') }}</span>
   </a>
 

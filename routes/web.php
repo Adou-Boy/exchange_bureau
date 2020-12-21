@@ -18,7 +18,7 @@ use App\Http\Controllers\Backend\ConfigServiceController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
